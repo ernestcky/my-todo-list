@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-export default class TodoList extends Component {
-    constructor(props) {
-        super(props);
-    }
+export default class TodoItem extends Component {
 
     render() {
+        console.log(this.props.todo)
         return (
             <div>
                 <label>{this.props.todo.text}</label>

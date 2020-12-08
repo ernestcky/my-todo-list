@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
-export default class TodoList extends Component {
+export default class TodoGroup extends Component {
 
     constructor(props) {
         super(props);
-    };
-
-    initArraySize = (number) => {
-        return Array.from(Array(number).keys());
     };
 
     render() {
@@ -17,9 +13,9 @@ export default class TodoList extends Component {
         console.log(todoArray);
         return (
             <div>
-                {todoArray.map((todo) => {
-                    <TodoItem key={uuidv4()} todo={todo}/>
-                })}
+                {todoArray.map((todo) => (
+                    < TodoItem key={uuidv4()} todo={todo} />
+                ))}
             </div>
         )
     }
