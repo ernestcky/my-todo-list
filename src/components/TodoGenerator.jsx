@@ -6,12 +6,7 @@ export default class TodoGenerator extends Component {
         super(props);
 
         this.state = {
-            todoText: "",
-            todo: {
-                id: "",
-                text: "",
-                done: ""
-            }
+            todoText: ""
         }
     }
 
@@ -22,13 +17,12 @@ export default class TodoGenerator extends Component {
     }
 
     submitTodo = () => {
-        this.setState({
-            todo: {
-                id: uuidv4(),
-                text: this.state.todoText,
-                done: false
-            }
-        })
+        const todo =  {
+            id: uuidv4(),
+            text: this.state.todoText,
+            done: false
+        }
+        this.props.submitTodo(todo);
     }
 
     render() {
@@ -42,9 +36,6 @@ export default class TodoGenerator extends Component {
                 />
                 <button onClick={this.submitTodo}>Add</button>
                 <br />
-                {this.state.todo.id}
-                {this.state.todo.text}
-                {this.state.todo.done}
             </div>
         )
     }
