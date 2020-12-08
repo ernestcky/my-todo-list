@@ -6,7 +6,7 @@ export default class TodoList extends Component {
     render() {
         return (
             <div>
-                <TodoGroup />
+                <TodoGroup size={3} />
                 <TodoGenerator />
             </div>
         )
