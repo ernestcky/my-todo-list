@@ -13,15 +13,13 @@ export default class TodoList extends Component {
     };
 
     render() {
-        const size = this.props.size;
-        const initArraySize = this.initArraySize(size);
-        const todoItemArr = initArraySize.map(() => (
-            <TodoItem key={uuidv4()}/>
-        ));
-
+        const todoArray = this.props.todoArray;
+        console.log(todoArray);
         return (
             <div>
-                {todoItemArr}
+                {todoArray.map((todo) => {
+                    <TodoItem key={uuidv4()} todo={todo}/>
+                })}
             </div>
         )
     }
