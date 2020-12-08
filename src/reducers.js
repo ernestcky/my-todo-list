@@ -3,7 +3,7 @@ import { SUBMIT } from "./actionTypes"
 
 const todoArray = (state = [], action) => {
     if (action.type === SUBMIT) {
-        state.push(action.payload);
+        return state.concat(action.payload)
     }
     return state;
 }
