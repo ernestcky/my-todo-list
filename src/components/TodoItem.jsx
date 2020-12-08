@@ -11,6 +11,10 @@ export default class TodoItem extends Component {
 
     };
 
+    deleteTodo = (id) => {
+        this.props.deleteTodo(id);
+    }
+
     render() {
         const todo = this.props.todo;
         return (
@@ -18,7 +22,7 @@ export default class TodoItem extends Component {
                 <label onClick={() => this.toggleTodo(todo.id)}>
                     {this.renderText(todo)}
                 </label>
-                <button>x</button>
+                <button onClick={() => this.deleteTodo(todo.id)}>x</button>
             </div>
         )
     }

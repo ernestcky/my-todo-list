@@ -1,4 +1,4 @@
-import { SUBMIT, TOGGLE } from "./actionTypes"
+import { DELETE, SUBMIT, TOGGLE } from "./actionTypes"
 
 export const submitTodo = (todo) => {
     return {
@@ -10,6 +10,13 @@ export const submitTodo = (todo) => {
 export const toggleTodo = (id) => {
     return {
         type: TOGGLE,
+        payload: id
+    }
+}
+
+export const deleteTodo = (id) => {
+    return {
+        type: DELETE,
         payload: id
     }
 }

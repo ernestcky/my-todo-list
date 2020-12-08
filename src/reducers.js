@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-import { SUBMIT, TOGGLE } from "./actionTypes"
+import { SUBMIT, TOGGLE, DELETE } from "./actionTypes"
 
 const todoArray = (state = [], action) => {
     if (action.type === SUBMIT) {
@@ -13,6 +13,10 @@ const todoArray = (state = [], action) => {
             return todo
         })
     }
+    if (action.type === DELETE) {
+        return state.filter(todo => (todo.id != action.payload))
+    }
+
     return state;
 }
 
