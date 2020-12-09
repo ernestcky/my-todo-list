@@ -5,11 +5,7 @@ export default class TodoList extends Component {
     render() {
         return (
             <div>
-                <TodoGroupContainer
-                    style={{
-                        margin: "10px"
-                    }}
-                />
+                <TodoGroupContainer/>
                 <TodoGeneratorContainer />
             </div>
         )

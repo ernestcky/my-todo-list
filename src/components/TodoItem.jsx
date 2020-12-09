@@ -1,6 +1,17 @@
-import Item from "antd/lib/list/Item";
+import { Row, Col, Tag, Button } from "antd";
 import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from './../apis/todos';
+import {DeleteTwoTone} from '@ant-design/icons';
+
+const color = {
+    Shopping: "magenta",
+    Fruit: "cyan",
+    Vegetables: "green",
+    Habit: "gold",
+    Everyday: "orange",
+    Other: "purple",
+
+}
 
 export default class TodoItem extends Component {
 
@@ -15,13 +26,13 @@ export default class TodoItem extends Component {
     };
 
     renderCategory = (todo) => {
-        let categoryString = "";
+        let categoryTagArr = [];
         todo.category.forEach(Item => {
-            console.log(Item)
-            categoryString += Item + " "
+            categoryTagArr.push(<Tag color={color[Item]}>{Item}</Tag>);
         });
-        return categoryString;
+        return categoryTagArr;
     }
+
 
     deleteTodo = (id) => {
         deleteTodo(id).then(
@@ -32,14 +43,25 @@ export default class TodoItem extends Component {
     render() {
         const todo = this.props.todo;
         return (
-            <div onClick={() => this.toggleTodo(todo.id, todo.done)}>
-                <label>
-                    {this.renderText(todo)}
-                </label>
-
-                <label>{this.renderCategory(todo)}</label>
-
-                <button onClick={() => this.deleteTodo(todo.id)}>x</button>
+            <div
+                onClick={() => this.toggleTodo(todo.id, todo.done)}
+                style={{
+                    width: '100%'
+                }}
+            >
+                <Row justify="center">
+                    <Col span={10} className="todoMessage">
+                        <label className="todoMsg">
+                            {this.renderText(todo)}
+                        </label>
+                    </Col>
+                    <Col span={7} offset={5}>
+                        {this.renderCategory(todo)}
+                    </Col>
+                    <Col span={1}>
+                        <DeleteTwoTone className="button" onClick={() => this.deleteTodo(todo.id)} />
+                    </Col>
+                </Row>
             </div>
         )
     }

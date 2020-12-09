@@ -25,15 +25,15 @@ export default class TodoGroup extends Component {
     render() {
         const { initLoading, loading } = this.state;
         return (
-            <Row justify="center" >
-                <Col span={12}>
-                    <List 
-                        className="todolist"
+            <Row justify="center">
+                <Col span={16}>
+                    <List
+                        
                         loading={initLoading}
                         itemLayout="horizontal"
                         dataSource={this.props.todoArray}
                         renderItem={todo => (
-                            <List.Item>
+                            <List.Item className="todolist">
                                 <TodoItemContainer key={todo.id} todo={todo} />
                             </List.Item>
                         )}>

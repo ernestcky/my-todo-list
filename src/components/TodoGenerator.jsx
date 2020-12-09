@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addNewTodo } from "../apis/todos";
-import { Checkbox, Divider } from 'antd';
+import { Checkbox, Button} from 'antd';
 
 const CheckboxGroup = Checkbox.Group;
 
@@ -37,7 +37,9 @@ export default class TodoGenerator extends Component {
     render() {
         const categoryOptions = ['Shopping', 'Fruit', 'Vegetables', 'Habit', 'Everyday', 'Other'];
         return (
-            <div>
+            <div style={{
+                margin: "10px"
+            }}>
                 <input
                     value={this.state.todoText}
                     placeholder="type the text"
@@ -46,8 +48,7 @@ export default class TodoGenerator extends Component {
                 />
 
                 <CheckboxGroup options={categoryOptions} value={this.state.checkedCategory} onChange={this.onChangeCategory} />
-                
-                <button onClick={this.submitTodo}>Add</button>
+                <Button type="primary" onClick={this.submitTodo}>Add</Button>
                 <br />
             </div>
         )

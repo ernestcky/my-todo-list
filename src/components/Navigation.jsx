@@ -1,6 +1,5 @@
 import { Col, Menu, Row } from "antd";
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import '../css/stylesheet.css';
 
@@ -11,7 +10,7 @@ export default class Navigation extends Component {
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
-            backgroundColor: '#ff0000'
+            backgroundColor: '#dedede'
         }
         return (
             <Row justify="center">
