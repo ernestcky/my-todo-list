@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Avatar, Button, Skeleton, Row, Col } from 'antd';
+import { List, Avatar, Button, Skeleton, Row, Col, Tag } from 'antd';
 
 export default class DoneList extends Component {
     constructor(props) {
@@ -20,6 +20,15 @@ export default class DoneList extends Component {
         });
     }
 
+    renderCategory = (todo) => {
+        let categoryTagArr = [];
+
+        todo.category.forEach(Item => {
+            categoryTagArr.push(<Tag>{Item}</Tag>);
+        });
+        return categoryTagArr;
+    }
+
     render() {
         // const doneTodoArray = this.state.doneTodoArray;
         const { initLoading, doneTodoArray } = this.state;
@@ -30,9 +39,10 @@ export default class DoneList extends Component {
                         loading={initLoading}
                         itemLayout="horizontal"
                         dataSource={doneTodoArray}
-                        renderItem={todoText => (
+                        renderItem={todo => (
                             <List.Item>
-                                <div>{todoText}</div>
+                                <label>{todo.text}</label>
+                                {this.renderCategory(todo)}
                             </List.Item>
                         )}>
                     </List>
