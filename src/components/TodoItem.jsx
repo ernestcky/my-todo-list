@@ -32,8 +32,8 @@ export default class TodoItem extends Component {
     render() {
         const todo = this.props.todo;
         return (
-            <div>
-                <label onClick={() => this.toggleTodo(todo.id, todo.done)}>
+            <div onClick={() => this.toggleTodo(todo.id, todo.done)}>
+                <label>
                     {this.renderText(todo)}
                 </label>
 
