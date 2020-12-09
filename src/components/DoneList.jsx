@@ -22,7 +22,7 @@ export default class DoneList extends Component {
 
     render() {
         // const doneTodoArray = this.state.doneTodoArray;
-        const { initLoading, loading, doneTodoArray } = this.state;
+        const { initLoading, doneTodoArray } = this.state;
         return (
             <Row justify="center">
                 <Col span={12}>
