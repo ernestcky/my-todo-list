@@ -8,9 +8,16 @@ const todoArray = (state = [], action) => {
     if (action.type === TOGGLE) {
         return state.map(todo => {
             if (todo.id === action.payload) {
-                todo.done = !todo.done
+                return {
+                    ...todo,
+                    done: !todo.done
+                }
             }
-            return todo
+            else {
+                return {
+                    ...todo
+                }
+            }
         })
     }
     if (action.type === DELETE) {

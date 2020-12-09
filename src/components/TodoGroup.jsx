@@ -10,11 +10,12 @@ export default class TodoGroup extends Component {
 
     render() {
         const todoArray = this.props.todoArray;
+        console.log(todoArray)
         return (
             <div>
-                {todoArray.map((todo) => (
-                    <TodoItemContainer key={uuidv4()} todo={todo} />
-                ))}
+                {todoArray.map(todo => 
+                    <TodoItemContainer key={todo.id} todo={todo} />
+                )}
             </div>
         )
     }
