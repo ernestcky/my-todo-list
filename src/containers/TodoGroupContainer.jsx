@@ -1,6 +1,5 @@
 import TodoGroup from '../components/TodoGroup';
 import { connect } from "react-redux";
-import { getTodoList } from './../apis/todos';
 import { initTodoArray } from "../actions";
 
 const mapStateToProps = (state) => ({

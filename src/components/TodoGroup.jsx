@@ -16,7 +16,6 @@ export default class TodoGroup extends Component {
 
     render() {
         const todoArray = this.props.todoArray;
-        console.log(todoArray)
         return (
             <div>
                 {todoArray.map(todo => 
