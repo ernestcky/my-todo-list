@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>Todo List</h3>
+        <h3 style={{
+          color: "white",
+          margin: 0
+        }}>Todo List</h3>
       </header>
       <BrowserRouter>
         <Navigation></Navigation>
