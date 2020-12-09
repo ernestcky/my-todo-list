@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { deleteTodo } from './../apis/todos';
 
 export default class TodoItem extends Component {
 
@@ -11,7 +12,9 @@ export default class TodoItem extends Component {
     };
 
     deleteTodo = (id) => {
-        this.props.deleteTodo(id);
+        deleteTodo(id).then(
+            this.props.deleteTodo(id)
+        )
     }
 
     render() {
