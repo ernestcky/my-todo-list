@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem';
 import { v4 as uuidv4 } from 'uuid';
 import TodoItemContainer from './../containers/TodoItemContainer';
 
