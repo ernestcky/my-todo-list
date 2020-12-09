@@ -5,5 +5,5 @@ export const getTodoList = () => {
 };
 
 export const addNewTodo = (text) => {
-    return api.post("/Todo", { text });
+    return api.post("/Todo", { text: text, done: false });
 };
