@@ -1,4 +1,4 @@
-import { Row, Col, Tag, Button } from "antd";
+import { Row, Col, Tag } from "antd";
 import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from './../apis/todos';
 import {DeleteTwoTone} from '@ant-design/icons';

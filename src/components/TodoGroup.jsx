@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TodoItemContainer from './../containers/TodoItemContainer';
 import { getTodoList } from './../apis/todos';
-import { List, Avatar, Button, Skeleton, Row, Col } from 'antd';
+import { List, Row, Col } from 'antd';
 
 export default class TodoGroup extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Avatar, Button, Skeleton, Row, Col, Tag } from 'antd';
+import { List, Row, Col, Tag } from 'antd';
 
 const color = {
     Shopping: "magenta",
