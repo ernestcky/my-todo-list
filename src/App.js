@@ -2,6 +2,7 @@ import './App.css';
 import TodoList from './components/TodoList';
 import { BrowserRouter, Link, NavLink, Redirect, Route, Switch } from "react-router-dom";
 import DoneListContainer from './containers/DoneListContainer'
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <NavLink to="/">nav link</NavLink>
           </li>
           <li>
-            <Redirect to="/done">go to done page</Redirect>
+            {/* <Redirect to="/done">go to done page</Redirect> */}
           </li>
           <li>
             <Link to="/">go to list page</Link>
@@ -26,7 +27,8 @@ function App() {
         </ul>
         <Switch>
           <Route path="/done" component={DoneListContainer}/>
-          <Route path="/" component={TodoList}/>
+          <Route exact path="/" component={TodoList}/>
+          <Route component={NotFound} />
         </Switch>
 
       </BrowserRouter>
