@@ -15,13 +15,16 @@ export default class TodoGenerator extends Component {
             todoText: event.target.value
         });
     }
-
+    // todo: clear input
     submitTodo = () => {
         const todo =  {
             id: uuidv4(),
             text: this.state.todoText,
             done: false
-        }
+        };
+        this.setState({
+            todoText: ""
+        })
         this.props.submitTodo(todo);
     }
 
@@ -29,7 +32,7 @@ export default class TodoGenerator extends Component {
         return (
             <div>
                 <input
-                    value={this.state.text}
+                    value={this.state.todoText}
                     placeholder="type the text"
                     type="text"
                     onChange={this.onChangeText}

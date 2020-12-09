@@ -13,11 +13,7 @@ const todoArray = (state = [], action) => {
                     done: !todo.done
                 }
             }
-            else {
-                return {
-                    ...todo
-                }
-            }
+            return todo;
         })
     }
     if (action.type === DELETE) {
