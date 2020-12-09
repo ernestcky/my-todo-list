@@ -8,7 +8,6 @@ export default class TodoItem extends Component {
 
     renderText = (todo) => {
         return todo.done ? (<s>{todo.text}</s>) : todo.text;
-
     };
 
     deleteTodo = (id) => {

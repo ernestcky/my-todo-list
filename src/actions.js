@@ -1,4 +1,4 @@
-import { DELETE, SUBMIT, TOGGLE } from "./actionTypes"
+import { DELETE, SUBMIT, TOGGLE, INIT_TODOS } from "./actionTypes"
 
 export const submitTodo = (todo) => {
     return {
@@ -18,5 +18,12 @@ export const deleteTodo = (id) => {
     return {
         type: DELETE,
         payload: id
+    }
+}
+
+export const initTodoArray = (data) =>{
+    return {
+        type: INIT_TODOS,
+        payload: data
     }
 }
