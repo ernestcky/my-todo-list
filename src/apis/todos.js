@@ -1,13 +1,17 @@
-import api from './api';
+import api from "./api";
 
 export const getTodoList = () => {
-    return api.get("/Todo");
+  return api.get("/Todo");
 };
 
 export const addNewTodo = (text) => {
-    return api.post("/Todo", { text: text, done: false });
+  return api.post("/Todo", { text: text, done: false });
 };
 
 export const deleteTodo = (id) => {
-    return api.delete("/Todo/" + id);
-}
+  return api.delete("/Todo/" + id);
+};
+
+export const updateTodo = (id, done) => {
+  return api.put("/Todo/" + id, { done: !done });
+};

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { deleteTodo } from './../apis/todos';
+import { deleteTodo, updateTodo } from './../apis/todos';
 
 export default class TodoItem extends Component {
 
-    toggleTodo = (id) => {
-        this.props.toggleTodo(id);
+    toggleTodo = (id, done) => {
+        updateTodo(id, done).then(
+            this.props.toggleTodo(id, done)
+        );
     };
 
     renderText = (todo) => {
@@ -21,7 +23,7 @@ export default class TodoItem extends Component {
         const todo = this.props.todo;
         return (
             <div>
-                <label onClick={() => this.toggleTodo(todo.id)}>
+                <label onClick={() => this.toggleTodo(todo.id, todo.done)}>
                     {this.renderText(todo)}
                 </label>
                 <button onClick={() => this.deleteTodo(todo.id)}>x</button>
