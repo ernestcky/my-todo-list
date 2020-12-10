@@ -18,4 +18,16 @@ export const updateTodo = (id, done) => {
 
 export const getTagList = () => {
   return api.get("/tag");
-}
+};
+
+export const addNewTag = (content, color) => {
+  return api.post("/tag", { content: content, color: color });
+};
+
+export const deleteTag = (id) => {
+  return api.delete("/tag/" + id);
+};
+
+export const updateTag = (id, content, color) => {
+  return api.put("/tag/" + id, { content: content, color: color });
+};

@@ -4,6 +4,7 @@ import { BrowserRouter, Link, NavLink, Redirect, Route, Switch } from "react-rou
 import DoneListContainer from './containers/DoneListContainer'
 import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
+import TagEditPortal from './components/TagEditPortal';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Navigation></Navigation>
         <Switch>
+          <Route path="/tag-edit" component={TagEditPortal}/>
           <Route path="/done" component={DoneListContainer}/>
           <Route exact path="/" component={TodoList}/>
           <Route component={NotFound} />

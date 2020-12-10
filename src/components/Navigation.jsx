@@ -23,6 +23,9 @@ export default class Navigation extends Component {
                         <Menu.Item>
                             <NavLink className="link" to="/done">go to done page</NavLink>
                         </Menu.Item>
+                        <Menu.Item>
+                            <NavLink className="link" to="/tag-edit">go to tag edit portal</NavLink>
+                        </Menu.Item>
                     </Menu>
                 </Col>
             </Row>
