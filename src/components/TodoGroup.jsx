@@ -33,7 +33,7 @@ export default class TodoGroup extends Component {
                         dataSource={this.props.todoArray}
                         renderItem={todo => (
                             <List.Item className="todolist">
-                                <TodoItemContainer key={todo.id} todo={todo} />
+                                <TodoItemContainer key={todo.todoId} todo={todo} />
                             </List.Item>
                         )}>
                     </List>

@@ -7,7 +7,7 @@ const todoArray = (state = [], action) => {
   }
   if (action.type === TOGGLE) {
     return state.map((todo) => {
-      if (todo.id === action.payload) {
+      if (todo.todoId === action.payload) {
         return {
           ...todo,
           done: !todo.done,
@@ -17,7 +17,7 @@ const todoArray = (state = [], action) => {
     });
   }
   if (action.type === DELETE) {
-    return state.filter((todo) => todo.id != action.payload);
+    return state.filter((todo) => todo.todoId != action.payload);
   }
 
   if (action.type === INIT_TODOS) {

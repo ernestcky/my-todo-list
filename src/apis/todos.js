@@ -5,7 +5,7 @@ export const getTodoList = () => {
 };
 
 export const addNewTodo = (text, categoryArr) => {
-  return api.post("/Todo", { text: text, done: false, category: categoryArr });
+  return api.post("/Todo", { text: text, done: false, tagList: categoryArr });
 };
 
 export const deleteTodo = (id) => {

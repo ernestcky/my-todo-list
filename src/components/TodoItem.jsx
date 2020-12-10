@@ -17,7 +17,7 @@ export default class TodoItem extends Component {
 
     renderCategory = (todo) => {
         let categoryTagArr = [];
-        todo.category.forEach(item => {
+        todo.tagList.forEach(item => {
             categoryTagArr.push(<Tag color={item.color}>{item.content}</Tag>);
         });
         return categoryTagArr;
@@ -34,7 +34,7 @@ export default class TodoItem extends Component {
         const todo = this.props.todo;
         return (
             <div
-                onClick={() => this.toggleTodo(todo.id, todo.done)}
+                onClick={() => this.toggleTodo(todo.todoId, todo.done)}
                 style={{
                     width: '100%'
                 }}
@@ -49,7 +49,7 @@ export default class TodoItem extends Component {
                         {this.renderCategory(todo)}
                     </Col>
                     <Col span={1}>
-                        <DeleteTwoTone className="button" onClick={() => this.deleteTodo(todo.id)} />
+                        <DeleteTwoTone className="button" onClick={() => this.deleteTodo(todo.todoId)} />
                     </Col>
                 </Row>
             </div>

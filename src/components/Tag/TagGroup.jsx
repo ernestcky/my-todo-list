@@ -1,53 +1,45 @@
 import React, { Component } from 'react';
 import { List, Row, Col, Tag } from 'antd';
 
-export default class DoneList extends Component {
+export default class TagGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
             initLoading: true,
-            loading: false,
-            doneTodoArray: [],
+            tagArray: [],
         };
     }
+
+
 
     componentDidMount() {
         this.setState({
             initLoading: false,
-            doneTodoArray: this.props.doneTodoArray,
+            tagArray: this.props.tagArray,
         });
-    }
-
-    renderCategory = (todo) => {
-        let categoryTagArr = [];
-        todo.tagList.forEach(item => {
-            categoryTagArr.push(<Tag color={item.color}>{item.content}</Tag>);
-        });
-        return categoryTagArr;
     }
 
     render() {
-        // const doneTodoArray = this.state.doneTodoArray;
-        const { initLoading, doneTodoArray } = this.state;
+        const { initLoading, tagArray } = this.state;
         return (
             <Row justify="center">
                 <Col span={16}>
                     <List
                         loading={initLoading}
                         itemLayout="horizontal"
-                        dataSource={doneTodoArray}
+                        dataSource={tagArray}
                         renderItem={todo => (
                             <List.Item className="todolist">
                                 <div style={{
                                     width: '100%'
-                                }}> 
-                                {/* todo: seperate a component */}
+                                }}>
+                                    {/* todo: seperate a component */}
                                     <Row justify="center">
                                         <Col span={10} className="todoMessage">
-                                            {todo.text}
+                                            {todo.content}
                                         </Col>
                                         <Col span={7} offset={6}>
-                                            {this.renderCategory(todo)}
+                                            {todo.color}
                                         </Col>
                                     </Row>
                                 </div>
@@ -56,6 +48,7 @@ export default class DoneList extends Component {
                     </List>
                 </Col>
             </Row>
+
         )
     }
 }
