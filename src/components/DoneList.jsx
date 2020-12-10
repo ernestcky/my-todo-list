@@ -50,7 +50,8 @@ export default class DoneList extends Component {
                             <List.Item className="todolist">
                                 <div style={{
                                     width: '100%'
-                                }}>
+                                }}> 
+                                {/* todo: seperate a component */}
                                     <Row justify="center">
                                         <Col span={10} className="todoMessage">
                                             {todo.text}

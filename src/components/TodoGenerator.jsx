@@ -27,7 +27,8 @@ export default class TodoGenerator extends Component {
     }
 
     submitTodo = () => {
-        addNewTodo(this.state.todoText, this.state.checkedCategory).then(response => this.props.submitTodo(response.data));
+        addNewTodo(this.state.todoText, this.state.checkedCategory)
+            .then(response => this.props.submitTodo(response.data));
         this.setState({
             todoText: "",
             checkedCategory: []
@@ -35,6 +36,8 @@ export default class TodoGenerator extends Component {
     }
 
     render() {
+        // todo: from db
+        // todo: allow add, delete
         const categoryOptions = ['Shopping', 'Fruit', 'Vegetables', 'Habit', 'Everyday', 'Other'];
         return (
             <div style={{

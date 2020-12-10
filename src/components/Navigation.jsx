@@ -6,6 +6,7 @@ import '../css/stylesheet.css';
 export default class Navigation extends Component {
 
     render() {
+        // todo: move to css
         const menuStyle = {
             position: 'relative',
             display: 'flex',

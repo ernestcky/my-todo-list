@@ -7,10 +7,7 @@
 
 .todolist:hover {
     background-color: rgb(245, 61, 61);
-    text-align: center;
-    border-radius: 5px;
-    margin: 5px;
-  }
+}
 
 .link {
   text-decoration: none;
