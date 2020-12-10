@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { List, Row, Col, Tag } from 'antd';
 import TagItem from './TagItem';
+import TagItemContainer from "../../containers/Tag/TagItemContainer";
 
 export default class TagGroup extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ export default class TagGroup extends Component {
                         itemLayout="horizontal"
                         dataSource={this.props.tagArray}
                         renderItem={(tag) => (
-                            <TagItem tag={tag} />
+                            <TagItemContainer tag={tag} />
                         )}>
                     </List>
                 </Col>

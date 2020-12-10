@@ -1,4 +1,12 @@
-import { DELETE, SUBMIT, TOGGLE, INIT_TODOS, INIT_TAGS, SUBMIT_TAG } from "./actionTypes";
+import {
+  DELETE,
+  SUBMIT,
+  TOGGLE,
+  INIT_TODOS,
+  INIT_TAGS,
+  SUBMIT_TAG,
+  DELETE_TAG,
+} from "./actionTypes";
 
 export const submitTodo = (todo) => {
   return {
@@ -29,15 +37,22 @@ export const initTodoArray = (data) => {
 };
 
 export const initTagArray = (data) => {
-    return {
-        type: INIT_TAGS,
-        payload: data
-    }
+  return {
+    type: INIT_TAGS,
+    payload: data,
+  };
 };
 
 export const submitTag = (tag) => {
-    return {
-        type: SUBMIT_TAG,
-        payload: tag
-    }
-}
+  return {
+    type: SUBMIT_TAG,
+    payload: tag,
+  };
+};
+
+export const deleteTag = (id) => {
+  return {
+    type: DELETE_TAG,
+    payload: id,
+  };
+};

@@ -12,7 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
     },
     initTagArray: (data) => {
         dispatch(initTagArray(data))
-        dispatch(initTagArray(data))
     }
 });
 
