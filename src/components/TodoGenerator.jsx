@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addNewTodo } from "../apis/todos";
-import { Checkbox, Button} from 'antd';
+import { Checkbox, Button } from 'antd';
+import { getTagList } from './../apis/todos';
 
 const CheckboxGroup = Checkbox.Group;
 
@@ -14,6 +15,12 @@ export default class TodoGenerator extends Component {
         }
     }
 
+    componentDidMount = () => {
+        getTagList().then((response) => {
+            this.props.initTagArray(response.data)
+        })
+    }
+
     onChangeText = (event) => {
         this.setState({
             todoText: event.target.value
@@ -21,8 +28,12 @@ export default class TodoGenerator extends Component {
     }
 
     onChangeCategory = (categoryList) => {
+        const checkedTag
+             = this.props.tagArray
+                .filter((tag) => (categoryList.indexOf(tag.content) > -1)
+        )
         this.setState({
-            checkedCategory: categoryList
+            checkedCategory: checkedTag
         })
     }
 
@@ -38,7 +49,11 @@ export default class TodoGenerator extends Component {
     render() {
         // todo: from db
         // todo: allow add, delete
-        const categoryOptions = ['Shopping', 'Fruit', 'Vegetables', 'Habit', 'Everyday', 'Other'];
+        const categoryOptions = this.props.tagArray.map(tag =>
+            tag.content
+        )
+
+        const checkedCategory = this.state.checkedCategory.map(tag => tag.content)
         return (
             <div style={{
                 margin: "10px"
@@ -50,7 +65,7 @@ export default class TodoGenerator extends Component {
                     onChange={this.onChangeText}
                 />
 
-                <CheckboxGroup options={categoryOptions} value={this.state.checkedCategory} onChange={this.onChangeCategory} />
+                <CheckboxGroup options={categoryOptions} value={checkedCategory} onChange={this.onChangeCategory} />
                 <Button type="primary" onClick={this.submitTodo}>Add</Button>
                 <br />
             </div>

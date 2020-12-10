@@ -28,7 +28,6 @@ export default class TodoGroup extends Component {
             <Row justify="center">
                 <Col span={16}>
                     <List
-                        
                         loading={initLoading}
                         itemLayout="horizontal"
                         dataSource={this.props.todoArray}

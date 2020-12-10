@@ -15,3 +15,7 @@ export const deleteTodo = (id) => {
 export const updateTodo = (id, done) => {
   return api.put("/Todo/" + id, { done: !done });
 };
+
+export const getTagList = () => {
+  return api.get("/tag");
+}

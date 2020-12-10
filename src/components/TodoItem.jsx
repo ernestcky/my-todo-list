@@ -3,16 +3,6 @@ import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from './../apis/todos';
 import {DeleteTwoTone} from '@ant-design/icons';
 
-const color = {
-    Shopping: "magenta",
-    Fruit: "cyan",
-    Vegetables: "green",
-    Habit: "gold",
-    Everyday: "orange",
-    Other: "purple",
-
-}
-
 export default class TodoItem extends Component {
 
     toggleTodo = (id, done) => {
@@ -27,8 +17,8 @@ export default class TodoItem extends Component {
 
     renderCategory = (todo) => {
         let categoryTagArr = [];
-        todo.category.forEach(Item => {
-            categoryTagArr.push(<Tag color={color[Item]}>{Item}</Tag>);
+        todo.category.forEach(item => {
+            categoryTagArr.push(<Tag color={item.color}>{item.content}</Tag>);
         });
         return categoryTagArr;
     }

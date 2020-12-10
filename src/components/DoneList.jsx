@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import { List, Row, Col, Tag } from 'antd';
 
-const color = {
-    Shopping: "magenta",
-    Fruit: "cyan",
-    Vegetables: "green",
-    Habit: "gold",
-    Everyday: "orange",
-    Other: "purple",
-
-}
-
 export default class DoneList extends Component {
     constructor(props) {
         super(props);
@@ -30,8 +20,8 @@ export default class DoneList extends Component {
 
     renderCategory = (todo) => {
         let categoryTagArr = [];
-        todo.category.forEach(Item => {
-            categoryTagArr.push(<Tag color={color[Item]}>{Item}</Tag>);
+        todo.category.forEach(item => {
+            categoryTagArr.push(<Tag color={item.color}>{item.content}</Tag>);
         });
         return categoryTagArr;
     }
@@ -59,7 +49,6 @@ export default class DoneList extends Component {
                                         <Col span={7} offset={6}>
                                             {this.renderCategory(todo)}
                                         </Col>
-
                                     </Row>
                                 </div>
                             </List.Item>
