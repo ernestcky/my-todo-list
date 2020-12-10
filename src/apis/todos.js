@@ -21,6 +21,7 @@ export const getTagList = () => {
 };
 
 export const addNewTag = (content, color) => {
+  console.log(content, color);
   return api.post("/tag", { content: content, color: color });
 };
 

@@ -1,5 +1,12 @@
 import { combineReducers } from "redux";
-import { SUBMIT, TOGGLE, DELETE, INIT_TODOS, INIT_TAGS } from "./actionTypes";
+import {
+  SUBMIT,
+  TOGGLE,
+  DELETE,
+  INIT_TODOS,
+  INIT_TAGS,
+  SUBMIT_TAG,
+} from "./actionTypes";
 
 const todoArray = (state = [], action) => {
   if (action.type === SUBMIT) {
@@ -30,10 +37,13 @@ const tagArray = (state = [], action) => {
   if (action.type === INIT_TAGS) {
     return action.payload;
   }
+  if (action.type === SUBMIT_TAG) {
+    return state.concat(action.payload);
+  }
   return state;
 };
 
 export default combineReducers({
   todoArray,
-  tagArray
+  tagArray,
 });
