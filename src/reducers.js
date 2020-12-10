@@ -7,6 +7,7 @@ import {
   INIT_TAGS,
   SUBMIT_TAG,
   DELETE_TAG,
+  UPDATE_TAG,
 } from "./actionTypes";
 
 const todoArray = (state = [], action) => {
@@ -43,6 +44,18 @@ const tagArray = (state = [], action) => {
   }
   if (action.type === DELETE_TAG) {
     return state.filter((tag) => tag.tagId != action.payload);
+  }
+  if (action.type === UPDATE_TAG) {
+    return state.map((tag) => {
+        if (tag.tagId === action.payload.tagId) {
+          return {
+            ...tag,
+            content: action.payload.content,
+            color: action.payload.color
+          };
+        }
+        return tag;
+      });
   }
   return state;
 };

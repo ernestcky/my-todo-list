@@ -8,7 +8,7 @@ export default class TagGenerator extends Component {
 
         this.state = {
             tagContent: "",
-            tagColor: ""
+            tagColor: "blue"
         }
     }
 

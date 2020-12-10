@@ -6,6 +6,7 @@ import {
   INIT_TAGS,
   SUBMIT_TAG,
   DELETE_TAG,
+  UPDATE_TAG
 } from "./actionTypes";
 
 export const submitTodo = (todo) => {
@@ -56,3 +57,10 @@ export const deleteTag = (id) => {
     payload: id,
   };
 };
+
+export const updateTag = (tag) => {
+    return {
+        type: UPDATE_TAG,
+        payload: tag
+    }
+}

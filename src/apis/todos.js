@@ -12,8 +12,8 @@ export const deleteTodo = (id) => {
   return api.delete("/Todo/" + id);
 };
 
-export const updateTodo = (id, done) => {
-  return api.put("/Todo/" + id, { done: !done });
+export const updateTodo = (id, text, done, tagList) => {
+  return api.put("/Todo/" + id, { text: text, done: !done, tagList: tagList });
 };
 
 export const getTagList = () => {
@@ -29,6 +29,6 @@ export const deleteTag = (id) => {
   return api.delete("/tag/" + id);
 };
 
-export const updateTag = (id, content, color) => {
-  return api.put("/tag/" + id, { content: content, color: color });
+export const updateTag = (tag) => {
+  return api.put("/tag/" + tag.tagId, { content: tag.content, color: tag.color });
 };

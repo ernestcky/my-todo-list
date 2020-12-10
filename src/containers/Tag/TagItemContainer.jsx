@@ -1,10 +1,13 @@
 import { connect } from "react-redux";
 import TagItem from "../../components/Tag/TagItem";
-import { deleteTag } from './../../actions';
+import { deleteTag, updateTag } from './../../actions';
 
 const mapDispatchToProps = (dispatch) => ({
     deleteTag: (id) => {
         dispatch(deleteTag(id))
+    },
+    updateTag: (tag) => {
+        dispatch(updateTag(tag))
     }
 });
 
