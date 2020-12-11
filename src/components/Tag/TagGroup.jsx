@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { List, Row, Col, Tag } from 'antd';
-import TagItem from './TagItem';
+import { List, Row, Col } from 'antd';
 import TagItemContainer from "../../containers/Tag/TagItemContainer";
 
 export default class TagGroup extends Component {

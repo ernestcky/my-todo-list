@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Checkbox, Button, Select } from 'antd';
+import { Button, Select } from 'antd';
 import { addNewTag } from "../../apis/todos";
 
 export default class TagGenerator extends Component {
